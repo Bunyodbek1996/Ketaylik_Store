@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_order">
+
+
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.dasturchi.newketaylikstore.ui.main.order.OrderFragment"
+        android:label="@string/title_order"
+        tools:layout="@layout/fragment_order"/>
+
+    <fragment
+        android:id="@+id/navigation_order_old"
+        android:name="com.dasturchi.newketaylikstore.ui.main.oldorder.OldOrderFragment"
+        android:label="@string/title_order"
+        tools:layout="@layout/fragment_order_old"/>
+
+    <fragment
+        android:id="@+id/navigation_product"
+        android:name="com.dasturchi.newketaylikstore.ui.main.product.ProductFragment"
+        android:label="@string/title_product"
+        tools:layout="@layout/fragment_product"/>
+
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.dasturchi.newketaylikstore.ui.main.report.ReportFragment"
+        android:label="@string/title_report"
+        tools:layout="@layout/fragment_report"/>
+
+</navigation>

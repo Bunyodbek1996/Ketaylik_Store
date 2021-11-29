@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Food Store</string>
+
+    <string name="phone_number">Telefon raqam</string>
+    <string name="todo">todo</string>
+    <string name="enter_otp_code">Sms kodni kiriting</string>
+    <string name="enter">Kirish</string>
+    <string name="title_order">Bugunlik</string>
+    <string name="title_product">Maxsulotlar</string>
+    <string name="title_report">Xisobot</string>
+    <string name="sum">so\'m</string>
+    <string name="yopiq">Yopiq</string>
+    <string name="ochiq">Ochiq</string>
+    <string name="accepting">Qabul qilish</string>
+    <string name="ready">Tayyor bo\'ldi</string>
+    <string name="cancel">Bekor qilish</string>
+    <string name="all_order">Barchasi</string>
+</resources>

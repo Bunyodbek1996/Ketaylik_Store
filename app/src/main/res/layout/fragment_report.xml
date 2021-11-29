@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.dasturchi.newketaylikstore.ui.main.report.ReportViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.order.OrderFragment">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/radioAllTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barcha vaqt"
+                android:checked="true"
+                android:layout_weight="4"/>
+            <RadioButton
+                android:id="@+id/radioSelectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaqt tanlash"
+                android:layout_weight="4"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/consDate"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dan:"
+                android:paddingTop="@dimen/size_5dp"
+                android:gravity="center_vertical|right"
+                android:paddingBottom="@dimen/size_5dp"
+                tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml"
+                android:layout_marginLeft="@dimen/size_30dp"/>
+
+            <TextView
+                android:id="@+id/tvDateFrom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2021.01.01"
+                android:drawableRight="@drawable/ic_baseline_date_range_24"
+                android:paddingTop="@dimen/size_5dp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/size_5dp"
+                tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gacha:"
+                android:paddingTop="@dimen/size_5dp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/size_5dp"
+                tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml"
+                android:layout_marginLeft="@dimen/size_30dp"/>
+
+            <TextView
+                android:id="@+id/tvDateTo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="2021.01.01"
+                android:drawableRight="@drawable/ic_baseline_date_range_24"
+                android:gravity="center"
+                android:paddingTop="@dimen/size_5dp"
+                android:paddingBottom="@dimen/size_5dp"
+                tools:ignore="HardcodedText,RtlHardcoded,UseCompatTextViewDrawableXml" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaa"
+            app:layout_constraintTop_toBottomOf="@+id/consDate"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerReport"
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/consDate"
+            app:layout_constraintBottom_toTopOf="@+id/tvAllTrade"/>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_circular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/tvAllTrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_12dp"
+            android:background="#42A5F5"
+            android:textColor="@color/white"
+            android:text="Umumiy savdo:"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.dasturchi.newketaylikstore.model.Order" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_order"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        tools:ignore="UnusedAttribute">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_location_on_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tvCustomerPhone"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerName"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="@dimen/size_5dp"
+            android:layout_marginStart="@dimen/size_15dp"
+            android:layout_marginLeft="@dimen/size_15dp" />
+
+        <TextView
+            android:id="@+id/tvCustomerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_15dp"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:text="@{item.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bunyodbek" />
+
+        <TextView
+            android:id="@+id/tvCustomerAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.address}"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img1"
+            app:layout_constraintLeft_toRightOf="@+id/img1"
+            app:layout_constraintTop_toTopOf="@+id/img1"
+            app:layout_constraintRight_toLeftOf="@+id/tvCustomerPhone"
+            tools:text="Ulitsa sayilgah, Fergana city"
+            android:layout_marginLeft="@dimen/size_7dp"
+            android:layout_marginStart="@dimen/size_7dp" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="@dimen/size_15dp"
+            android:layout_marginLeft="@dimen/size_15dp"
+            app:layout_constraintRight_toLeftOf="@+id/tvCustomerPhone"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerAddress"
+            android:src="@drawable/ic_baseline_comment_24"
+            android:layout_marginTop="@dimen/size_5dp"/>
+
+        <TextView
+            android:id="@+id/tvOrderComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.comment}"
+            android:textSize="@dimen/text_12sp"
+            tools:text="Iltimos qaylali bo'lsin"
+            android:layout_marginLeft="@dimen/size_7dp"
+            app:layout_constraintTop_toTopOf="@+id/img2"
+            app:layout_constraintBottom_toBottomOf="@+id/img2"
+            app:layout_constraintLeft_toRightOf="@+id/img2" />
+
+        <TextView
+            android:id="@+id/tvOrderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginRight="@dimen/size_15dp"
+            android:layout_marginBottom="@dimen/size_10dp"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderComment"
+            tools:text="Time" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintRight_toLeftOf="@+id/tvOrderTime"
+            app:layout_constraintTop_toTopOf="@+id/tvOrderTime"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrderTime"
+            android:src="@drawable/ic_baseline_access_time_24"
+            android:layout_marginRight="@dimen/size_5dp"/>
+
+        <TextView
+            android:id="@+id/tvOrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:layout_marginEnd="@dimen/size_5dp"
+            android:layout_marginRight="@dimen/size_5dp"
+            android:text="@{item.total_price.toString()}"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintRight_toLeftOf="@+id/tvPriceCode"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="545000" />
+
+        <TextView
+            android:id="@+id/tvPriceCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:layout_marginEnd="@dimen/size_15dp"
+            android:layout_marginRight="@dimen/size_15dp"
+            android:text="@string/sum"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCustomerPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:layout_marginEnd="@dimen/size_15dp"
+            android:layout_marginRight="@dimen/size_15dp"
+            android:background="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:text="@{item.phone.toString()}"
+            android:textColor="#42A5F5"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderPrice"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"/>
+
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:textColor="#090"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCustomerName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCustomerName"
+            tools:text="Received" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

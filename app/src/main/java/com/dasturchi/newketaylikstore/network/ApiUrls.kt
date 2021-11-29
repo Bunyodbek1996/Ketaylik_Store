@@ -1,0 +1,17 @@
+package com.dasturchi.newketaylikstore.network
+
+const val BASE_URL = "http://admin.ketaylik.uz"
+const val LOGIN_URL = "/api/store/auth/login"
+const val CONFIRM_URL = "/api/store/auth/confirm"
+const val SEND_FCM_URL = "/api/store/auth/set_store_fcm"
+const val GET_NEW_ORDERS = "/api/store/orders/get_new_orders"
+const val GET_ALL_ORDERS = "/api/store/orders/get_all_orders"
+const val GET_ALL_BETWEEN = "/api/store/orders/get_orders_between"
+const val SET_STORE_STATUS = "/api/store/set_store_status"
+const val GET_STORE_STATUS = "/api/store/get_store_status"
+const val GET_SINGLE_ORDER = "api/store/orders/{id}/get_order"
+const val RECEIVE_ORDER = "api/store/orders/{id}/receive_order"
+const val READY_ORDER = "api/store/orders/{id}/make_order_ready"
+const val CANCEL_ORDER = "/api/store/orders/{id}/cancel_order"
+const val GET_PRODUCTS = "/api/store/products/get_products"
+const val SET_PRODUCT_STATUS = "/api/store/product/{id}/set_status"
